@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Previewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        textarea, div { width: 100%; height: 200px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Markdown Previewer</h1>
+    <textarea id="markdown" placeholder="Write markdown here..."></textarea>
+    <div id="preview"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const textarea = document.getElementById("markdown");
+        const preview = document.getElementById("preview");
+
+        textarea.addEventListener("input", () => {
+            preview.innerHTML = marked(textarea.value);
+        });
+    </script>
+</body>
+</html>
